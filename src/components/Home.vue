@@ -26,7 +26,7 @@ export default {
     },
     methods: {
         getMovies() {
-            axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}&page=1`)
+            axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=ja`)
             .then(response => {
                 this.movies = response.data.results
                 console.log(this.movies);
