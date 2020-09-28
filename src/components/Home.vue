@@ -1,8 +1,13 @@
 <template>
     <v-container>
         <v-row>
-            <v-col>
-                ホーム画面
+            <v-col v-for="movie in movies" :key="movie.id">
+                <v-card>
+                    <v-img v-bind:src="'http://image.tmdb.org/t/p/w300/' + movie.poster_path"></v-img>
+                    <v-card-title></v-card-title>
+                    <v-card-subtitle></v-card-subtitle>
+                    <v-card-text></v-card-text>
+                </v-card>
             </v-col>
         </v-row>
     </v-container>
