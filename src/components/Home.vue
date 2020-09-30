@@ -1,6 +1,9 @@
 <template>
     <v-container>
         <v-row>
+            <router-link to="/search">検索へ</router-link>
+        </v-row>
+        <v-row>
             <v-col v-for="movie in movies" :key="movie.id">
                 <v-card>
                     <v-img v-bind:src="'http://image.tmdb.org/t/p/w300/' + movie.poster_path"></v-img>

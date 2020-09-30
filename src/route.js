@@ -1,4 +1,9 @@
-import Vue from 'vue'
-import VueRouter from "vue-router"
+import Search from './components/Search.vue'
+import Home from './components/Home.vue'
 
-Vue.use(VueRouter);
+
+export const routes = [
+    { path: '', component: Home },
+    { path: '/search', component: Search },
+
+];
