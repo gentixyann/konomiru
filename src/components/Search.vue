@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container text-center>
         <v-row>
             <v-col>
                 <h1>検索</h1>
