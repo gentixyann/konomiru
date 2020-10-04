@@ -5,7 +5,7 @@
         </v-row>
         <v-row>
             <v-col v-for="movie in movies" :key="movie.id">
-                <v-card>
+                <v-card @click="getItem(movie)">
                     <v-img v-bind:src="'http://image.tmdb.org/t/p/w300/' + movie.poster_path"></v-img>
                     <v-card-title>{{ movie.title }}</v-card-title>
                     <v-card-subtitle>{{ movie.release_date }}</v-card-subtitle>
@@ -38,9 +38,12 @@ export default {
             console.log(this.movies);
 
         },
+         getItem(movie) {
+        console.log('押した' + movie.title);
+    }
     },
     created() {
         this.getMovies();
-    }
+    },
 }
 </script>

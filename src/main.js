@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import VueRouter from 'vue-router'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import { routes } from './route';
 
 Vue.config.productionTip = false
