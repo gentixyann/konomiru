@@ -3,13 +3,23 @@
         <v-row>
             <router-link to="/search">検索へ</router-link>
         </v-row>
+        <v-row class="text-center">
+            <v-col cols="12">
+                みんなの好きな作品
+            </v-col>
+        </v-row>
         <v-row>
             <v-col v-for="movie in movies" :key="movie.id">
-                <v-card @click="getItem(movie)">
-                    <v-img v-bind:src="'http://image.tmdb.org/t/p/w300/' + movie.poster_path"></v-img>
-                    <v-card-title>{{ movie.title }}</v-card-title>
-                    <v-card-subtitle>{{ movie.release_date }}</v-card-subtitle>
-                    <v-card-text>{{ movie.overview }}</v-card-text>
+                 <v-card @click="getItem(movie)" class="d-flex">
+                    <div>
+                      <v-img v-bind:src="'http://image.tmdb.org/t/p/w154/' + movie.poster_path"></v-img>
+                    </div>
+
+                    <div>
+                        <v-card-title>{{ movie.title }}</v-card-title>
+                        <v-card-subtitle>{{ movie.release_date }}</v-card-subtitle>
+                        <v-card-text>{{ movie.overview }}</v-card-text>
+                    </div>
                 </v-card>
             </v-col>
         </v-row>
@@ -47,3 +57,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.v-image__image--cover {
+    background-size: contain;
+}
+</style>
