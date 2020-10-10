@@ -9,12 +9,19 @@
             </v-col>
         </v-row>
         <v-row>
+            <v-col>
+                {{ movie.title }}
+            </v-col>
+        </v-row>
+        <v-row>
             <v-col v-for="movie in movies" :key="movie.id">
-                 <v-card @click="getItem(movie)" class="d-flex">
+                 <v-card 
+                 @click="getItem(movie)" 
+                 class="d-flex"
+                 >
                     <div>
                       <v-img v-bind:src="'http://image.tmdb.org/t/p/w154/' + movie.poster_path"></v-img>
                     </div>
-
                     <div>
                         <v-card-title>{{ movie.title }}</v-card-title>
                         <v-card-subtitle>{{ movie.release_date }}</v-card-subtitle>
@@ -34,6 +41,7 @@ export default {
     data() {
         return {
             movies: [],
+            movie: [],
             apiKey: 'a1a357b8cd4732e4d9c84ecc9a1d7406',
         }
     },
@@ -49,6 +57,7 @@ export default {
 
         },
          getItem(movie) {
+             this.movie = movie;
         console.log('押した' + movie.title);
     }
     },
@@ -61,5 +70,8 @@ export default {
 <style scoped>
 .v-image__image--cover {
     background-size: contain;
+}
+.red {
+  background-color: red;
 }
 </style>
