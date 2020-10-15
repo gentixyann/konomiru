@@ -8,20 +8,17 @@
                 みんなの好きな作品
             </v-col>
         </v-row>
-        <v-row>
+        <!-- <v-row>
             <v-col>
                 {{ clickItem.title }}
             </v-col>
-        </v-row>
+        </v-row> -->
          <v-row v-if="ready">
             <v-col v-for="movie in movies" :key="movie.id">
                <card-template
                class="d-flex"
                :oneMovie="movie"
-               :poster_path="movie.poster_path"
-               :title="movie.title" 
-               :release_date="movie.release_date" 
-               :overview="movie.overview">
+               >
                </card-template>
             </v-col>
         </v-row>
