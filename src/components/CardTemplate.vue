@@ -26,6 +26,7 @@ export default {
          getItem(movie) {
              this.clickItem = movie;
         console.log('押した' + movie.title);
+         }
     },
     created() {
     }
