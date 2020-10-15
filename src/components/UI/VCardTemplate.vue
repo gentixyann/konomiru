@@ -1,8 +1,14 @@
 <template>
  <v-card>
      <div>
-        <v-img v-bind:src="'http://image.tmdb.org/t/p/w154/'" + {{ poster_path }}></v-img>
+        <v-img v-bind:src="'http://image.tmdb.org/t/p/w154/'" + poster_path></v-img>
     </div>
+    <div>
+        <v-card-title>{{ title }}</v-card-title>
+        <v-card-subtitle>{{ release_date }}</v-card-subtitle>
+        <v-card-text>{{ overview }}</v-card-text>
+    </div>
+
     <div>
         <v-card-title>{{ title }}</v-card-title>
         <v-card-subtitle>{{ release_date }}</v-card-subtitle>

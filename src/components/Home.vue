@@ -13,7 +13,22 @@
                 {{ clickItem.title }}
             </v-col>
         </v-row>
-        <v-row v-if="ready">
+         <v-row v-if="ready">
+            <v-col v-for="movie in movies" :key="movie.id">
+               <card-template
+               class="d-flex"
+               :oneMovie="movie"
+               :poster_path="movie.poster_path"
+               :title="movie.title" 
+               :release_date="movie.release_date" 
+               :overview="movie.overview">
+               </card-template>
+            </v-col>
+        </v-row>
+
+
+        
+        <!-- <v-row v-if="ready">
             <v-col v-for="movie in movies" :key="movie.id">
                  <v-card 
                  @click="getItem(movie)"
@@ -23,15 +38,11 @@
                       <v-img v-bind:src="'http://image.tmdb.org/t/p/w154/' + movie.poster_path"></v-img>
                     </div>
                     <div>
-                        <!-- <v-card-title>{{ movie.title }}</v-card-title>
-                        <v-card-subtitle>{{ movie.release_date }}</v-card-subtitle>
-                        <v-card-text>{{ movie.overview }}</v-card-text> -->
                         <card-template :title="movie.title" :release_date="movie.release_date" :overview="movie.overview" />
-                        <!-- v-bind:hoge="data" hogeは任意の名前、dataはdata(),computed,methods()からの値を入れることができる。 -->
                     </div>
                 </v-card>
             </v-col>
-        </v-row>
+        </v-row> -->
     </v-container>
 </template>
 
