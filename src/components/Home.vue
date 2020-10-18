@@ -13,6 +13,7 @@
                 {{ clickItem.title }}
             </v-col>
         </v-row> -->
+
          <v-row v-if="ready">
             <v-col v-for="movie in movies" :key="movie.id">
                <card-template
@@ -22,30 +23,12 @@
                </card-template>
             </v-col>
         </v-row>
-
-
-        
-        <!-- <v-row v-if="ready">
-            <v-col v-for="movie in movies" :key="movie.id">
-                 <v-card 
-                 @click="getItem(movie)"
-                 class="d-flex"
-                 >
-                    <div>
-                      <v-img v-bind:src="'http://image.tmdb.org/t/p/w154/' + movie.poster_path"></v-img>
-                    </div>
-                    <div>
-                        <card-template :title="movie.title" :release_date="movie.release_date" :overview="movie.overview" />
-                    </div>
-                </v-card>
-            </v-col>
-        </v-row> -->
     </v-container>
 </template>
 
 <script>
 import axios from 'axios'
-import CardTemplate from './CardTemplate.vue'
+import CardTemplate from './UI/CardTemplate.vue'
 export default {
     name: 'Home',
     components: {
